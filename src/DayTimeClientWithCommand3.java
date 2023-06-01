@@ -9,7 +9,7 @@ import java.util.Scanner;
  * A command line client for the date server. Requires the IP address of the
  * server as the sole argument. Exits after printing the response.
  */
-public class DayTimeClientWithCommand2 {
+public class DayTimeClientWithCommand3 {
     public static void main(String[] args) throws IOException {
 
     Scanner scn = new Scanner(System.in); 

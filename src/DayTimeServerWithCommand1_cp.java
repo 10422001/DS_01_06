@@ -8,12 +8,15 @@
  * @author Ikaros
  */
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.io.*;
 import java.util.Date;
 
-public class DayTimeServerWithCommand1 {
+public class DayTimeServerWithCommand1_cp {
     public final static int daytimePort = 6666;
 
     public static void main(String[] args) {
