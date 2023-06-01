@@ -22,10 +22,25 @@ public class MulticastClient {
     public static void main(String[] args) throws Exception {
 
         MulticastSocket ms = null;
-        String ipGroup = "255.6.7.8";
+//        String ipGroup = "224.6.7.8";
+        String ipGroup = "225.6.7.8";
         int port = 6789;
         InetAddress ia = InetAddress.getByName(ipGroup);
+        System.out.println(ia.getHostAddress());
         ms = new MulticastSocket(port);
         ms.joinGroup(ia);
+        while(true){
+            byte[] buffer = new byte[1024];
+            DatagramPacket dp = new DatagramPacket(buffer , buffer.length);
+            ms.receive(dp);
+            String msg = new String(dp.getData()).trim();
+            System.out.println("Message received from server = " + msg);
+            if(msg.equals("Exit"))
+                System.out.println("No more messages. Exiting : " + msg);
+                break;
+        }
+
+
+//        ms.leaveGroup(ia);
     }
 }

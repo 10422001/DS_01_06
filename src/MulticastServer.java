@@ -4,8 +4,9 @@ import java.net.*;
 
 public class MulticastServer {
 
-    String ip = "255.6.7.8";
-    int port = 6789;
+//    String ip = "255.6.7.8";
+//    String ip = "224.0.0.1";
+//    int port = 6789;
 
     public void sendMessage(String ip, int port, String message) throws Exception {
 
@@ -19,10 +20,12 @@ public class MulticastServer {
     }
 
     public static void main(String[] args) throws Exception {
-        String ip = "255.6.7.8";
+    String ip = "224.6.7.8";
+
+
         int port = 6789;
         MulticastServer ms = new MulticastServer();
-        ms.sendMessage(ip, port, "Hello");
+        ms.sendMessage(ip, port, "AASDASDASDASD");
 
     }
 }
