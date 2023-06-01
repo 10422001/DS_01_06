@@ -14,7 +14,7 @@ import java.io.*;
 import java.util.Date;
 
 public class DayTimeServerWithCommand1 {
-    public final static int daytimePort = 5000;
+    public final static int daytimePort = 6666;
     public static void main(String[] args) {
         ServerSocket theServer;
         Socket theConnection;

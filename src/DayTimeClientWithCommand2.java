@@ -1,15 +1,15 @@
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.util.Scanner;
-import java.net.Socket;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.Socket;
+import java.util.Scanner;
 
 /**
  * A command line client for the date server. Requires the IP address of the
  * server as the sole argument. Exits after printing the response.
  */
-public class DayTimeClientWithCommand1 {
+public class DayTimeClientWithCommand2 {
     public static void main(String[] args) throws IOException {
 
     Scanner scn = new Scanner(System.in); 
@@ -28,7 +28,7 @@ public class DayTimeClientWithCommand1 {
         if (res.equals("Exit")){
             s.close();
             System.out.println("The connection is closed");
-//            System.exit(0);
+            System.exit(0);
             break;
         }
         System.out.println("Server response: " + res);
