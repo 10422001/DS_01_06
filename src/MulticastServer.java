@@ -20,7 +20,8 @@ public class MulticastServer {
     }
 
     public static void main(String[] args) throws Exception {
-    String ip = "224.6.7.8";
+        String ip = "224.6.7.8";
+        System.setProperty("java.net.preferIPv4Stack", "true");
 
 
         int port = 6789;
