@@ -23,6 +23,9 @@ public class MulticastClient {
 
         MulticastSocket ms = null;
         String ipGroup = "255.6.7.8";
+        int port = 6789;
         InetAddress ia = InetAddress.getByName(ipGroup);
+        ms = new MulticastSocket(port);
+        ms.joinGroup(ia);
     }
 }
