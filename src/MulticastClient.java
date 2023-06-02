@@ -26,8 +26,8 @@ public class MulticastClient {
 
 
         MulticastSocket ms = null;
-//        String ipGroup = "224.6.7.8";
         String ipGroup = "224.6.7.8";
+//        String ipGroup = "224.6.7.8";
         int port = 6789;
         InetAddress ia = InetAddress.getByName(ipGroup);
         System.out.println(ia.getHostAddress());
