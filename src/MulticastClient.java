@@ -4,31 +4,11 @@ import java.net.InetAddress;
 import java.net.MulticastSocket;
 
 public class MulticastClient {
-//
-//    String ip = "255.6.7.8";
-//    int port = 6789;
-//
-//    public void sendMessage(String ip, int port, String message) throws Exception {
-//
-//        DatagramSocket ds = new DatagramSocket();
-//        InetAddress inetAddress = InetAddress.getByName(ip);
-//        byte[] b = message.getBytes();
-//
-//        DatagramPacket dp = new DatagramPacket(b, b.length, inetAddress, port);
-//        ds.send(dp);
-//        ds.close();
-//    }
-
     public static void main(String[] args) throws Exception {
-        System.out.println(System.getProperty("java.net.preferIPv4Stack")   );
-//        System.out.println(java.net.NetworkInterface.getDefault());
-
-
-
+//        System.out.println(System.getProperty("java.net.preferIPv4Stack"));
         MulticastSocket ms = null;
-        String ipGroup = "224.6.7.8";
-//        String ipGroup = "224.6.7.8";
-        int port = 6789;
+        String ipGroup = "224.0.0.0";
+        int port = 9999;
         InetAddress ia = InetAddress.getByName(ipGroup);
         System.out.println(ia.getHostAddress());
         ms = new MulticastSocket(port);
@@ -39,12 +19,11 @@ public class MulticastClient {
             ms.receive(dp);
             String msg = new String(dp.getData()).trim();
             System.out.println("Message received from server = " + msg);
-            if (msg.equals("Exit"))
+            if (msg.equals("Exit")) {
                 System.out.println("No more messages. Exiting : " + msg);
-            break;
+                ms.leaveGroup(ia);
+                break;
+            }
         }
-
-
-//        ms.leaveGroup(ia);
     }
 }

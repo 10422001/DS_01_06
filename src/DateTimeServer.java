@@ -19,7 +19,7 @@ public class DateTimeServer {
 //                Date now = new Date();
                 p.println(new Date());
                 theConnection.close();
-                theServer.close();
+//                theServer.close();
             }
         } catch (IOException e) {
             System.err.println(e);

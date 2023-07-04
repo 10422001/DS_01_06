@@ -9,11 +9,12 @@ import java.util.Scanner;
  * A command line client for the date server. Requires the IP address of the
  * server as the sole argument. Exits after printing the response.
  */
+//STH wrong: Exception in thread "main" java.net.SocketException: Broken pipe<<<<<<<<<
 public class DayTimeClientWithCommand3 {
     public static void main(String[] args) throws IOException {
 
     Scanner scn = new Scanner(System.in); 
-    Socket s = new Socket("localhost", 6666);
+    Socket s = new Socket("localhost", 5001);
     BufferedReader inFromServer = new BufferedReader(new InputStreamReader(
        s.getInputStream()));
     DataOutputStream dos = new DataOutputStream(s.getOutputStream());
